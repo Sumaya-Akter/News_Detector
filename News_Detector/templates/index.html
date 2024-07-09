@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>INDEX</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            .central_box {
+                /* Styles for the box */
+                margin: 0 auto;  /* Center the box horizontally */
+                width: 50%;      /* Specify a width for the box (adjust as needed) */
+                border: 1px solid #ccc; /* Add a border (optional) */
+                padding: 10px;    /* Add padding for spacing (optional) */
+              }
+              
+            .central_para{
+                text-align: center;
+
+            }
+            
+
+        </style>
+    </head>
+    <body style="background-color:lightblue;">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        
+        <hr>
+        {% include "navbar.html" %}
+        <hr>
+        <p> If you want to train a model on your own dataset then go to the NewsDetect page !!</p><br>
+        <hr>
+        <p> If you want to know of summary of pretrained main model used here go to the PretrainedModelSummary Page</p>
+        <hr>
+        <div class="central_box">
+        <p class="central_para">Welcome to NewsPredictor! Here You can check whether a news is reliable or not!
+            To check the reliability of your news  paste your news in yhe box. 
+            You will get the prediction within few moments!</p>
+        </div>
+        <div class='central_box'>
+        <form  method='POST'>
+            {% csrf_token %}
+            <textarea name="text_input" placeholder="Enter the news here" rows="20" cols="80"></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        <hr>
+        <br>
+        {% if prediction %}
+        <h2>Prediction Result:</h2>
+        <p>Prediction: {{ prediction }}</p>
+        <p>Reliability Score: {{reliability}}
+        <p>Input Text is {{ pr }}</p>
+       {% endif %}
+       
+        <br>
+    </div>
+    
+        
+        <script src="" async defer></script>
+    </body>
+</html>

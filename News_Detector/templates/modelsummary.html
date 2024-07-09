@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>PretrainedModelSummary</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body style="background-color:lightblue;">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <hr>
+        {% include "navbar.html" %}
+        <hr>
+        <p style="text-align: center;"> Hello it is modelsummary page. Here you can find the model summary on the main large dataset.</p>
+        {% load static %}
+        <div class="imageclass">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 40px;">
+                <div style="text-align: center;">
+                    <p>Confusion Matrix for Main Training Data</p>
+                    <img src="{% static 'main_train_cm.png' %}" style="max-width: 100%; max-height: 250px;">
+                    
+                </div>
+                
+                <div style="text-align: center;">
+                    <p>Confusion Matrix for Main Testing Data</p>
+                    <img src="{% static 'main_test_cm.png' %}" style="max-width: 100%; max-height: 250px;">
+                    
+                </div>
+
+            </div>
+            <br>
+            <br>
+
+            <div style="display: flex; justify-content: center; align-items: center; gap: 40px;">
+                <div style="text-align: center;">
+                    <img src="{% static 'main_train_roc.png' %}" style="max-width: 95%; max-height: 250px;">
+                    <p>ROC Curve for Main Training Data</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="{% static 'main_test_roc.png' %}" style="max-width: 95%; max-height: 250px;">
+                    <p>ROC Curve for Main Testing Data</p>
+                </div>
+                
+            </div>
+
+
+
+        </div>
+
+    </body>
+</html>
